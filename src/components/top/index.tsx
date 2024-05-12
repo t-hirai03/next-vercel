@@ -1,12 +1,11 @@
-import Image from "next/image";
 import styles from "./index.module.scss";
-import { Button } from "../ui/button";
+import { CreditForm } from "@/components/credit-form";
 
 // トップページのコンポーネント
 const Top = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Button>Click</Button>
+      <CreditForm />
     </div>
   );
 };
