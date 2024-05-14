@@ -46,13 +46,13 @@ export function CreditForm() {
           <div className="space-y-2">
             <Label htmlFor="expirationDate">Expiration Date</Label>
             <div className="grid grid-cols-2 gap-2">
-              <Select id="expirationMonth" required>
+              <Select required>
                 <SelectTrigger>
                   <SelectValue placeholder="MM" />
                 </SelectTrigger>
                 <SelectContent />
               </Select>
-              <Select id="expirationYear" required>
+              <Select required>
                 <SelectTrigger>
                   <SelectValue placeholder="YYYY" />
                 </SelectTrigger>
