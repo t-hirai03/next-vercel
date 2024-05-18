@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from '@/components/header';
+import NextAuthProvider from '@/providers/NextAuth';
 
 const notoSansJp = Noto_Sans_JP({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
       <body className={notoSansJp.className}>
         <Header />
         <main>
-          {children}
+          <NextAuthProvider>{children}</NextAuthProvider>
         </main>
       </body>
     </html>
