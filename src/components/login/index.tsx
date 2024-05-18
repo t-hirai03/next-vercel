@@ -15,6 +15,9 @@ export default function Login() {
 				<button onClick={() => signIn('google', {}, { prompt: 'login' })}>
 					Googleでログイン
 				</button>
+				<button onClick={() => signIn('github', {}, { prompt: 'login' })}>
+					GitHubでログイン
+				</button>
 			</div>
 		);
 	}
