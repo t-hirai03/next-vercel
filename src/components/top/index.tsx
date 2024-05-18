@@ -1,13 +1,33 @@
+"use client";
+
 import styles from "./index.module.scss";
-import { CreditForm } from "@/components/credit-form";
+import Login from "@/components/login";
+import Logout from "@/components/logout";
+import { useSession } from "next-auth/react";
 
 // トップページのコンポーネント
 const Top = () => {
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <CreditForm />
-    </div>
-  );
+	const { data: session, status } = useSession();
+	return (
+		<div>
+			{status === 'authenticated' ? (
+				<div>
+					<p>セッションの期限：{session.expires}</p>
+					<p>ようこそ、{session.user?.name}さん</p>
+					<img
+						src={session.user?.image ?? ``}
+						alt=""
+						style={{ borderRadius: '50px' }}
+					/>
+					<div>
+						<Logout />
+					</div>
+				</div>
+			) : (
+				<Login />
+			)}
+		</div>
+	);
 };
 
 export default Top;
