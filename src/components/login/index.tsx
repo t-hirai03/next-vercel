@@ -12,9 +12,9 @@ export default function Login() {
 		return (
 			<div>
 				<p>あなたはログインしていません</p>
-				<button onClick={() => signIn('google', {}, { prompt: 'login' })}>
+				{/* <button onClick={() => signIn('google', {}, { prompt: 'login' })}>
 					Googleでログイン
-				</button>
+				</button> */}
 				<button onClick={() => signIn('github', {}, { prompt: 'login' })}>
 					GitHubでログイン
 				</button>
