@@ -18,6 +18,8 @@ export default function Login() {
 				<button onClick={() => signIn('github', {}, { prompt: 'login' })}>
 					GitHubでログイン
 				</button>
+				{/* NEXTAUTH_URL変数を表示する */}
+				<p>{process.env.NEXT_PUBLIC_NEXTAUTH_URL}</p>
 			</div>
 		);
 	}
