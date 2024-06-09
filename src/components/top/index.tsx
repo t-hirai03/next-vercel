@@ -1,8 +1,8 @@
 "use client";
 
 import styles from "./index.module.scss";
-import Login from "@/components/login";
-import Logout from "@/components/logout";
+// import Login from "@/components/login";
+// import Logout from "@/components/logout";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ const Top = () => {
 	const { data: session, status } = useSession();
 	return (
 		<div>
-			{status === 'authenticated' ? (
+			{/* {status === 'authenticated' ? (
 				<div>
 					<p>セッションの期限：{session.expires}</p>
 					<p>ようこそ、{session.user?.name}さん</p>
@@ -28,7 +28,7 @@ const Top = () => {
 				</div>
 			) : (
 				<Login />
-			)}
+			)} */}
 		</div>
 	);
 };
