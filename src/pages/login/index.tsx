@@ -1,13 +1,11 @@
 import React from 'react';
 import Layout from '@/app/layout';
-import { useSession } from 'next-auth/react';
+import Login from '@/components/login';
 
 const LoginPage = () => {
-  // const { data: session, status } = useSession();
-
   return (
     <Layout>
-        <div></div>
+      <Login />
     </Layout>
   );
 }
