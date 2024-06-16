@@ -9,7 +9,7 @@ import Logout from "@/components/logout";
 const Login = () => {
 	const { data: session, status } = useSession();
 	return (
-		<div>
+		<div className="l-wrapper">
 			{status === 'authenticated' ? (
 				<div>
 					<p>セッションの期限：{session.expires}</p>

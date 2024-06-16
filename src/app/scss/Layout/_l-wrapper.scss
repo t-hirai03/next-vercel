@@ -1,0 +1,7 @@
+@use "../Global/" as *;
+
+.l-wrapper {
+   margin-inline: auto;
+   padding: 0 20px;
+   width: min(100%, 1240px);
+}

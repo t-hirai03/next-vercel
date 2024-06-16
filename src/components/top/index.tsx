@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 // トップページのコンポーネント
 const Top = () => {
 	return (
-		<div>
+		<div className="l-wrapper">
 			<h2>トップページ</h2>
 		</div>
 	);

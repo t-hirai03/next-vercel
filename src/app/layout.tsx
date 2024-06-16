@@ -1,4 +1,5 @@
-import "./globals.css";
+// import "./globals.scss";
+import "./scss/globals.scss"
 import Header from '@/components/header';
 import NextAuthProvider from '@/providers/NextAuth';
 import { config } from '@fortawesome/fontawesome-svg-core'
