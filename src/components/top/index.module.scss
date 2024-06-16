@@ -1,3 +1,48 @@
-.test {
-    color: red;
+@use "@/app/scss/Global/mixin" as *;
+
+.list {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include MQ(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include MQ(sm) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .thumbnail {
+            width: 100%;
+            height: auto;
+        }
+
+        .info {
+        }
+
+        .weapons {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+
+            .item {
+                .icon {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .name {
+                    text-align: center;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }
