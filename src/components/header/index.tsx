@@ -1,12 +1,15 @@
+"use client";
+
 import Link from "next/link";
-// import { linkData } from "./linkData";
+import { useRouter } from "next/navigation";
 import styles from "./index.module.scss";
 import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
-import Logout from "@/components/logout";
 
 const Header = () => {
   const { data: session, status } = useSession();
+  const router = useRouter();
+
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
@@ -30,11 +33,13 @@ const Header = () => {
               </button>
             </li>
           ) : (
-            <li className={styles.notLogin}>
-              <Link href="/login" className={styles.link}>
-                ログイン
-              </Link>
-            </li>
+            router.pathname !== "/login" && (
+              <li className={styles.notLogin}>
+                <Link href="/login" className={styles.link}>
+                  ログイン
+                </Link>
+              </li>
+            )
           )}
         </ul>
       </div>
