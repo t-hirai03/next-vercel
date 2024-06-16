@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import styles from "./index.module.scss";
 import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
