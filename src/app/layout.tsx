@@ -1,10 +1,10 @@
 // import "./globals.scss";
-import "./scss/globals.scss"
-import Header from '@/components/header';
-import NextAuthProvider from '@/providers/NextAuth';
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+import "./scss/globals.scss";
+import Header from "@/components/header";
+import NextAuthProvider from "@/providers/NextAuth";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 export default function RootLayout({
   children,
@@ -13,10 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Header />
-      <main>
-        <NextAuthProvider>{children}</NextAuthProvider>
-      </main>
+      <NextAuthProvider>
+        <Header />
+        <main>{children}</main>
+      </NextAuthProvider>
     </>
   );
 }

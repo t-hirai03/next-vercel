@@ -1,26 +1,45 @@
-import Link from 'next/link'
-import { linkData } from './linkData'
+import Link from "next/link";
+// import { linkData } from "./linkData";
 import styles from "./index.module.scss";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useSession, signOut } from "next-auth/react";
+import Image from "next/image";
+import Logout from "@/components/logout";
 
 const Header = () => {
-    return (
-        <header className={styles.header}>
-            <div className={styles.wrapper}>
-                <h1 className={styles.title}>ポートフォリオ</h1>
-                <ul className={styles.list}>
-                    {linkData.map((data, index) => (
-                        <li className={styles.item} key={index}>
-                            <Link href={data.url} className={styles.link}>
-                                <FontAwesomeIcon icon={data.icon} className={styles.icon} />
-                                <p className={styles.text}>{data.text}</p>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </header>
-    );
-}
+  const { data: session, status } = useSession();
+  return (
+    <header className={styles.header}>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>
+          <Link href="/">ポートフォリオ</Link>
+        </h1>
+        <ul className={styles.list}>
+          {status === "authenticated" ? (
+            <li className={styles.inLogin}>
+              {/* <p>セッションの期限：{session.expires}</p>
+            <p>ようこそ、{session.user?.name}さん</p> */}
+              <Image
+                src={session.user?.image ?? ``}
+                alt=""
+                width={32}
+                height={32}
+                style={{ borderRadius: "50px" }}
+              />
+              <button onClick={() => signOut()} className={styles.link}>
+                ログアウト
+              </button>
+            </li>
+          ) : (
+            <li className={styles.notLogin}>
+              <Link href="/login" className={styles.link}>
+                ログイン
+              </Link>
+            </li>
+          )}
+        </ul>
+      </div>
+    </header>
+  );
+};
 
 export default Header;
