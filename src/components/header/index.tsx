@@ -26,7 +26,7 @@ const Header = () => {
                 alt=""
                 width={32}
                 height={32}
-                style={{ borderRadius: "50px" }}
+                style={{ borderRadius: "50%" }}
               />
               <button onClick={() => signOut()} className={styles.link}>
                 ログアウト
