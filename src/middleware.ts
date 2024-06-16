@@ -5,10 +5,11 @@ import { getToken } from "next-auth/jwt";
 export async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
-  const { pathname } = req.nextUrl;
+  const { pathname } = new URL(req.url, process.env.NEXT_PUBLIC_NEXTAUTH_URL);
 
   if (token && pathname === "/login") {
-    return NextResponse.redirect(new URL("/", req.url));
+    const redirectUrl = new URL("/", process.env.NEXT_PUBLIC_NEXTAUTH_URL).toString();
+    return NextResponse.redirect(redirectUrl);
   }
 
   return NextResponse.next();
