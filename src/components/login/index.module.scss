@@ -1,0 +1,84 @@
+.login {
+    .title {
+        margin-bottom: 16px;
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .form {
+        width: min(100%, 360px);
+        margin-inline: auto;
+        border: 1px solid var(--color-border-default);
+        border-radius: 4px;
+
+        .list {
+            padding: 32px 32px 24px 32px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            .item {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 8px;
+
+                .button {
+                    width: 56px;
+                    height: 56px;
+                    border: 1px solid var(--color-border-default);
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .icon {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+
+                .text {
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .original {
+            padding: 24px 32px 32px;
+            border-top: 1px solid var(--color-border-default);
+
+            .item:not(:first-child) {
+                margin-top: 16px;
+            }
+
+            .title {
+                font-size: var(--font-size-sm);
+                font-weight: 700;
+            }
+
+            .input {
+                width: 100%;
+                margin-top: 8px;
+                padding: 8px 12px;
+                border: 1px solid var(--color-border-default);
+                border-radius: 4px;
+                font-size: 14px;
+            }
+
+            .button {
+                margin-top: 24px;
+                background-color: #238F74;
+                width: 100%;
+                color: #fff;
+                padding: 0 16px;
+                height: 40px;
+                border-radius: 4px;
+            }
+        }
+    }
+}

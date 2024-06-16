@@ -1,0 +1,12 @@
+/* Foundation
+  ------------------------------------------------*/
+@use "Foundation";
+
+/* Layout (prefix: l-)
+    ------------------------------------------------*/
+@use "Layout";
+
+/* tailwind.css
+    ------------------------------------------------*/
+@tailwind components;
+@tailwind utilities;
