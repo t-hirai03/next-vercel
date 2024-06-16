@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import NextAuthProvider from "@/providers/NextAuth";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import Meta from "@/components/meta";
 config.autoAddCss = false;
 
 export default function RootLayout({
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <>
       <NextAuthProvider>
+        <Meta />
         <Header />
         <main>{children}</main>
       </NextAuthProvider>

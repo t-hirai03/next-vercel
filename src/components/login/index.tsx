@@ -39,7 +39,7 @@ const Login = () => {
               <p className={styles.header}>パスワード</p>
               <input type="password" className={styles.input} />
             </div>
-            <button className={styles.button}>ログイン</button>
+            <button className={styles.button} disabled>ログイン</button>
           </div>
         </div>
       </div>
