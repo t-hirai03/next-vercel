@@ -14,7 +14,8 @@ export const useFetchSalmonRun = () => {
           "Content-Type": "application/json",
           "user-agent": "S3/1.0(twitter@missplatoon)",
         },
-        credentials: "include", // SafariのCORS問題を回避するために追加
+        credentials: "include",
+        mode: "cors"
       });
 
       try {
