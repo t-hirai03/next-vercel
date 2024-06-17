@@ -15,7 +15,7 @@ export const useFetchSalmonRun = () => {
           "user-agent": "S3/1.0(twitter@missplatoon)",
         },
         credentials: "include",
-        mode: "cors"
+        mode: "no-cors"
       });
 
       try {
