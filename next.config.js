@@ -1,5 +1,6 @@
+// next.config.js
 module.exports = {
   images: {
-    domains: ['cdn.discordapp.com', 'avatars.githubusercontent.com'],
+    domains: ['api.lp1.av5ja.srv.nintendo.net', 'cdn.discordapp.com', 'avatars.githubusercontent.com'],
   },
-}
+};

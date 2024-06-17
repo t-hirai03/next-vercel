@@ -78,6 +78,11 @@
                 padding: 0 16px;
                 height: 40px;
                 border-radius: 4px;
+
+                &[disabled] {
+                    background-color: #B2B2B2;
+                    color: var(--color-text-secondary);
+                }
             }
         }
     }
