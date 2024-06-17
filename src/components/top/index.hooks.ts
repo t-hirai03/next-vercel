@@ -11,10 +11,9 @@ export const useFetchSalmonRun = () => {
       const req = new Request("https://spla3.yuu26.com/api/coop-grouping/schedule", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
           "user-agent": "S3/1.0(twitter@missplatoon)",
         },
-        // credentials: "include",
+        credentials: "same-origin",
       });
 
       try {
