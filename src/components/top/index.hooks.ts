@@ -14,6 +14,7 @@ export const useFetchSalmonRun = () => {
           "Content-Type": "application/json",
           "user-agent": "S3/1.0(twitter@missplatoon)",
         },
+        credentials: "include",
       });
 
       try {
