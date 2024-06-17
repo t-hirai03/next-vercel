@@ -14,11 +14,14 @@ export const useFetchSalmonRun = () => {
           "Content-Type": "application/json",
           "user-agent": "S3/1.0(twitter@missplatoon)",
         },
-        credentials: "include",
+        credentials: "include", // SafariのCORS問題を回避するために追加
       });
 
       try {
         const res = await fetch(req);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
         const data = await res.json();
 
         if (isMounted) {
