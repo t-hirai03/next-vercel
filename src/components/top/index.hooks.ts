@@ -34,7 +34,5 @@ export const useFetchSalmonRun = () => {
     };
   }, []);
 
-  console.log(salmonRunData);
-
   return salmonRunData ?? [];
 };

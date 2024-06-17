@@ -25,7 +25,7 @@ const Top = () => {
                     className={styles.thumbnail}
                   />
                   <div className={styles.info}>
-				    <h3 className={styles.stage}>{data.stage.name}</h3>
+                    <h3 className={styles.stage}>{data.stage.name}</h3>
                     <time className={styles.time}>
                       スケジュール:{" "}
                       {format(new Date(data.start_time), "yyyy/MM/dd HH:mm", { locale: ja })} -{" "}
