@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { salmonRunData } from "@/types";
+import cookie from 'js-cookie'
 
 export const useFetchSalmonRun = () => {
   const [salmonRunData, setSalmonRunData] = useState<salmonRunData[] | null>(null);
@@ -8,13 +9,14 @@ export const useFetchSalmonRun = () => {
     let isMounted = true;
 
     const fetchData = async () => {
+      // corsを回避する設定を入れる
       const req = new Request("https://spla3.yuu26.com/api/coop-grouping/schedule", {
         method: "GET",
         headers: {
           "user-agent": "S3/1.0(twitter@missplatoon)",
         },
-        credentials: "same-origin",
       });
+      cookie.set('SameSite', 'None', { secure: true });
 
       try {
         const res = await fetch(req);
