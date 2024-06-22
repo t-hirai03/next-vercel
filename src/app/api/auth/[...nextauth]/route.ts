@@ -1,7 +1,8 @@
-import NextAuth, { AuthOptions } from 'next-auth'
+import NextAuth from 'next-auth'
 import DiscordProvider from 'next-auth/providers/discord'
 import GithubProvider from 'next-auth/providers/github'
 
+// eslint-disable-next-line
 const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
@@ -14,6 +15,6 @@ const handler = NextAuth({
       clientSecret: process.env.DISCORD_CLIENT_SECRET || '',
     }),
   ],
-}) as AuthOptions
+})
 
 export { handler as GET, handler as POST }
