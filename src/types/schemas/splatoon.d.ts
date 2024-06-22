@@ -14,7 +14,7 @@ interface Weapon {
   image: string;
 }
 
-export interface salmonRunData {
+export interface SalmonRunData {
   start_time: string;
   end_time: string;
   boss: Boss;
@@ -24,5 +24,5 @@ export interface salmonRunData {
 }
 
 export interface ApiResponse {
-  results: salmonRunData[];
+  results: SalmonRunData[];
 }

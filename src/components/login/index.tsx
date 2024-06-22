@@ -1,7 +1,8 @@
-import styles from "./index.module.scss";
-import { signIn } from "next-auth/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub,faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { signIn } from 'next-auth/react'
+
+import styles from './index.module.scss'
 
 // トップページのコンポーネント
 const Login = () => {
@@ -12,18 +13,22 @@ const Login = () => {
         <div className={styles.form}>
           <ul className={styles.list}>
             <li className={styles.item}>
+              {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
               <button
+                type="button"
                 className={styles.button}
-                onClick={() => signIn("github", {}, { prompt: "login" })}
+                onClick={() => signIn('github', {}, { prompt: 'login' })}
               >
                 <FontAwesomeIcon icon={faGithub} className={styles.icon} />
               </button>
               <p className={styles.text}>GitHub</p>
             </li>
             <li className={styles.item}>
+              {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
               <button
+                type="button"
                 className={styles.button}
-                onClick={() => signIn("discord", {}, { prompt: "login" })}
+                onClick={() => signIn('discord', {}, { prompt: 'login' })}
               >
                 <FontAwesomeIcon icon={faDiscord} className={styles.icon} />
               </button>
@@ -33,18 +38,24 @@ const Login = () => {
           <div className={styles.original}>
             <div className={styles.item}>
               <p className={styles.header}>メールアドレス</p>
-              <input type="text" placeholder="メールアドレス" className={styles.input} />
+              <input
+                type="text"
+                placeholder="メールアドレス"
+                className={styles.input}
+              />
             </div>
             <div className={styles.item}>
               <p className={styles.header}>パスワード</p>
               <input type="password" className={styles.input} />
             </div>
-            <button className={styles.button} disabled>ログイン</button>
+            <button type="button" className={styles.button} disabled>
+              ログイン
+            </button>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

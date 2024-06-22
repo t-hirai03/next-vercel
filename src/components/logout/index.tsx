@@ -1,15 +1,17 @@
-import React from 'react';
-import { useSession, signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react'
+import React from 'react'
 
 export default function Logout() {
-	const { data: session, status } = useSession();
+  const { status } = useSession()
 
-	if (status === 'authenticated') {
-		return (
-			<div>
-				<button onClick={() => signOut()}>ログアウト</button>
-			</div>
-		);
-	}
-	return null;
+  if (status === 'authenticated') {
+    return (
+      <div>
+        <button type="button" onClick={() => signOut()}>
+          ログアウト
+        </button>
+      </div>
+    )
+  }
+  return null
 }

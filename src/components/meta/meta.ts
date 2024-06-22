@@ -3,12 +3,12 @@ const title = "ポートフォリオ";
 const pages = [
   {
     url: "/",
-    title: title,
+    title,
     description: "",
   },
   {
     url: "/login",
-    title: "ログイン | " + title,
+    title: `ログイン | ${  title}`,
     description: "",
   },
 ];
