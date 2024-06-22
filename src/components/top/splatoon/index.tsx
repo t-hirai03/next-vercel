@@ -27,7 +27,7 @@ const Splatoon = () => {
 
   return (
     <section className={styles.splatoon}>
-      <h2 className={styles.title}>スプラトゥーン サーモンランスケジュール</h2>
+      <h2 className={styles.title}>スプラトゥーン3 サーモンランスケジュール</h2>
       <ul className={styles.list}>
         {salmonRunData &&
           salmonRunData.map((data) => (
