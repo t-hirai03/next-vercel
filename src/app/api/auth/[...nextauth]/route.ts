@@ -15,6 +15,16 @@ const handler = NextAuth({
       clientSecret: process.env.DISCORD_CLIENT_SECRET || '',
     }),
   ],
+  pages: {
+    signIn: '/',
+    signOut: '/login',
+  },
+  callbacks: {
+    /* eslint-disable-next-line */
+    redirect({ url, baseUrl }) {
+      return '/customers/mypage'
+    },
+  },
 })
 
 export { handler as GET, handler as POST }

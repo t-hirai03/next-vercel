@@ -20,8 +20,6 @@ const Header = () => {
         <ul className={styles.list}>
           {status === 'authenticated' ? (
             <li className={styles.inLogin}>
-              {/* <p>セッションの期限：{session.expires}</p>
-            <p>ようこそ、{session.user?.name}さん</p> */}
               <Image
                 src={session.user?.image ?? ``}
                 alt=""

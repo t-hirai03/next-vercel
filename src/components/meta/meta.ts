@@ -1,16 +1,21 @@
-const title = "ポートフォリオ";
+const title = 'ポートフォリオ'
 
 const pages = [
   {
-    url: "/",
+    url: '/',
     title,
-    description: "",
+    description: '',
   },
   {
-    url: "/login",
-    title: `ログイン | ${  title}`,
-    description: "",
+    url: '/login',
+    title: `ログイン | ${title}`,
+    description: '',
   },
-];
+  {
+    url: '/customers/mypage',
+    title: `マイページ | ${title}`,
+    description: '',
+  },
+]
 
-export default pages;
+export default pages
