@@ -16,7 +16,7 @@ export default function RootLayout({
     <>
       <Meta />
       <NextAuthProvider>
-        <GoogleAnalytics gaId="G-M0MJH6RXT3" />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <Header />
         <main>{children}</main>
       </NextAuthProvider>
