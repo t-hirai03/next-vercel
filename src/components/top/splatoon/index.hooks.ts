@@ -1,48 +1,20 @@
-import cookie from 'js-cookie'
-import { useEffect, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
 
+import ApiClient from '@/lib/api-client'
 import { SalmonRunData, ApiResponse } from '@/types'
 
-export const useFetchSalmonRun = () => {
-  const [salmonRunData, setSalmonRunData] = useState<SalmonRunData[] | null>(
-    null
+const fetchSalmonRunData = async (): Promise<SalmonRunData[]> => {
+  const res = await new ApiClient().get<ApiResponse>(
+    'https://spla3.yuu26.com/api/coop-grouping/schedule'
   )
+  return res.results
+}
 
-  useEffect(() => {
-    let isMounted = true
+export const useFetchSalmonRun = (): SalmonRunData[] | [] => {
+  const { data } = useQuery<SalmonRunData[]>({
+    queryKey: ['salmonRunData'],
+    queryFn: fetchSalmonRunData,
+  })
 
-    const fetchData = () => {
-      const req = new Request(
-        'https://spla3.yuu26.com/api/coop-grouping/schedule',
-        {
-          method: 'GET',
-        }
-      )
-      cookie.set('SameSite', 'None', { secure: true })
-
-      fetch(req)
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`)
-          }
-          return res.json()
-        })
-        .then((data: ApiResponse) => {
-          if (isMounted) {
-            setSalmonRunData(data.results)
-          }
-        })
-        .catch((error) => {
-          console.error('Failed to fetch data:', error)
-        })
-    }
-
-    fetchData()
-
-    return () => {
-      isMounted = false
-    }
-  }, [])
-
-  return salmonRunData ?? []
+  return data ?? []
 }

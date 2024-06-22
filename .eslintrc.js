@@ -20,6 +20,7 @@ module.exports = {
     'prettier',
     'plugin:storybook/recommended',
     'plugin:testing-library/react',
+    "plugin:@tanstack/eslint-plugin-query/recommended"
   ],
   ignorePatterns: ['src/types/generated'], // 自動生成の型定義ファイルは無視
   overrides: [
