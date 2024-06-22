@@ -36,6 +36,7 @@ const Login = () => {
             </li>
           </ul>
           <div className={styles.original}>
+            <p className="text-red">※↓未実装</p>
             <div className={styles.item}>
               <p className={styles.header}>メールアドレス</p>
               <input

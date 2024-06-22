@@ -64,3 +64,10 @@ address {
 img {
   vertical-align: top;
 }
+
+// shadncnのドロップダウンメニューのスタイル
+[data-radix-popper-content-wrapper] {
+  @include MQ(md) {
+    width: 100%;
+ }
+}

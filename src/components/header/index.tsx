@@ -5,6 +5,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+
 import styles from './index.module.scss'
 
 const Header = () => {
@@ -20,20 +29,36 @@ const Header = () => {
         <ul className={styles.list}>
           {status === 'authenticated' ? (
             <li className={styles.inLogin}>
-              <Image
-                src={session.user?.image ?? ``}
-                alt=""
-                width={32}
-                height={32}
-                style={{ borderRadius: '50%' }}
-              />
-              <button
-                type="button"
-                onClick={() => signOut()}
-                className={styles.link}
-              >
-                ログアウト
-              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  {' '}
+                  <Image
+                    src={session.user?.image ?? ``}
+                    alt=""
+                    width={32}
+                    height={32}
+                    style={{ borderRadius: '50%' }}
+                  />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-full md:w-56">
+                  <DropdownMenuLabel>{session.user?.name}</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>
+                    <Link href="/customers/mypage" className={styles.link}>
+                      マイページ
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <button
+                      type="button"
+                      onClick={() => signOut()}
+                      className={styles.link}
+                    >
+                      ログアウト
+                    </button>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </li>
           ) : (
             router.pathname !== '/login' && (
