@@ -23,7 +23,7 @@ import { useFetchSalmonRun } from './index.hooks'
 import styles from './index.module.scss'
 
 const Splatoon = () => {
-  const salmonRunData: SalmonRunData[] | null = useFetchSalmonRun()
+  const salmonRunData: SalmonRunData[] = useFetchSalmonRun()
 
   return (
     <section className={styles.splatoon}>
