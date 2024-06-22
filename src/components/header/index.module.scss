@@ -1,10 +1,18 @@
+@use "@/app/scss/Global/mixin" as *;
+
 .header {
+    border-bottom: solid 1px var(--color-border-default);
+
     .wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 10px;
         padding: 10px 20px;
+    }
+
+    .title {
+        font-size: myClamp(20, 34);
     }
 
     .list {

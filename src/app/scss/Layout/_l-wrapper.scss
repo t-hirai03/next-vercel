@@ -4,4 +4,8 @@
    margin-inline: auto;
    padding: 80px 20px;
    width: min(100%, 1240px);
+
+   @include MQ(md) {
+      padding: 40px 16px;
+   }
 }

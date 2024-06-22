@@ -1,5 +1,9 @@
 @use "@/app/scss/Global/mixin" as *;
 
+.title {
+    font-size: myClamp(16, 24);
+}
+
 .list {
     margin-top: 20px;
     display: grid;

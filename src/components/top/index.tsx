@@ -23,6 +23,7 @@ const Top = () => {
                     width={800}
                     height={450}
                     className={styles.thumbnail}
+                    priority={true}
                   />
                   <div className={styles.info}>
                     <h3 className={styles.stage}>{data.stage.name}</h3>
@@ -43,6 +44,7 @@ const Top = () => {
                             width={145}
                             height={145}
                             className={styles.icon}
+                            priority={true}
                           />
                           <span className={styles.name}>{weapon.name}</span>
                         </li>
