@@ -1,14 +1,15 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "./index.module.scss";
-import { useSession, signOut } from "next-auth/react";
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useSession, signOut } from 'next-auth/react'
+
+import styles from './index.module.scss'
 
 const Header = () => {
-  const { data: session, status } = useSession();
-  const router = useRouter();
+  const { data: session, status } = useSession()
+  const router = useRouter()
 
   return (
     <header className={styles.header}>
@@ -17,7 +18,7 @@ const Header = () => {
           <Link href="/">ポートフォリオ</Link>
         </h1>
         <ul className={styles.list}>
-          {status === "authenticated" ? (
+          {status === 'authenticated' ? (
             <li className={styles.inLogin}>
               {/* <p>セッションの期限：{session.expires}</p>
             <p>ようこそ、{session.user?.name}さん</p> */}
@@ -26,14 +27,18 @@ const Header = () => {
                 alt=""
                 width={32}
                 height={32}
-                style={{ borderRadius: "50%" }}
+                style={{ borderRadius: '50%' }}
               />
-              <button onClick={() => signOut()} className={styles.link}>
+              <button
+                type="button"
+                onClick={() => signOut()}
+                className={styles.link}
+              >
                 ログアウト
               </button>
             </li>
           ) : (
-            router.pathname !== "/login" && (
+            router.pathname !== '/login' && (
               <li className={styles.notLogin}>
                 <Link href="/login" className={styles.link}>
                   ログイン
@@ -44,7 +49,7 @@ const Header = () => {
         </ul>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

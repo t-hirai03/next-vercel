@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import { useRouter } from "next/router";
+
 import pages from "./meta";
 
 export default function Meta() {

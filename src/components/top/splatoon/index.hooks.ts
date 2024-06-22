@@ -1,42 +1,48 @@
-import { useEffect, useState } from "react";
-import { salmonRunData } from "@/types";
 import cookie from 'js-cookie'
+import { useEffect, useState } from 'react'
+
+import { SalmonRunData, ApiResponse } from '@/types'
 
 export const useFetchSalmonRun = () => {
-  const [salmonRunData, setSalmonRunData] = useState<salmonRunData[] | null>(null);
+  const [salmonRunData, setSalmonRunData] = useState<SalmonRunData[] | null>(
+    null
+  )
 
   useEffect(() => {
-    let isMounted = true;
+    let isMounted = true
 
-    const fetchData = async () => {
-      // corsを回避する設定を入れる
-      const req = new Request("https://spla3.yuu26.com/api/coop-grouping/schedule", {
-        method: "GET"
-      });
-      cookie.set('SameSite', 'None', { secure: true });
-
-      try {
-        const res = await fetch(req);
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
+    const fetchData = () => {
+      const req = new Request(
+        'https://spla3.yuu26.com/api/coop-grouping/schedule',
+        {
+          method: 'GET',
         }
-        const data = await res.json();
-        console.log(data);
+      )
+      cookie.set('SameSite', 'None', { secure: true })
 
-        if (isMounted) {
-          setSalmonRunData(data.results);
-        }
-      } catch (error) {
-        console.error("Failed to fetch data:", error);
-      }
-    };
+      fetch(req)
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`)
+          }
+          return res.json()
+        })
+        .then((data: ApiResponse) => {
+          if (isMounted) {
+            setSalmonRunData(data.results)
+          }
+        })
+        .catch((error) => {
+          console.error('Failed to fetch data:', error)
+        })
+    }
 
-    fetchData();
+    fetchData()
 
     return () => {
-      isMounted = false;
-    };
-  }, []);
+      isMounted = false
+    }
+  }, [])
 
-  return salmonRunData ?? [];
-};
+  return salmonRunData ?? []
+}
