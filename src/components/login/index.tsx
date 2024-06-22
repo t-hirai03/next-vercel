@@ -30,28 +30,34 @@ const Login = () => {
                 className={styles.button}
                 onClick={() => signIn('discord', {}, { prompt: 'login' })}
               >
-                <FontAwesomeIcon icon={faDiscord} className={styles.icon} />
+                <FontAwesomeIcon
+                  icon={faDiscord}
+                  className={styles.icon}
+                  style={{ color: '#7289DA' }}
+                />
               </button>
               <p className={styles.text}>Discord</p>
             </li>
           </ul>
-          <div className={styles.original}>
-            <div className={styles.item}>
-              <p className={styles.header}>メールアドレス</p>
-              <input
-                type="text"
-                placeholder="メールアドレス"
-                className={styles.input}
-              />
+          {process.env.NODE_ENV === 'development' && (
+            <div className={styles.original}>
+              <div className={styles.item}>
+                <p className={styles.header}>メールアドレス</p>
+                <input
+                  type="text"
+                  placeholder="メールアドレス"
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.item}>
+                <p className={styles.header}>パスワード</p>
+                <input type="password" className={styles.input} />
+              </div>
+              <button type="button" className={styles.button} disabled>
+                ログイン
+              </button>
             </div>
-            <div className={styles.item}>
-              <p className={styles.header}>パスワード</p>
-              <input type="password" className={styles.input} />
-            </div>
-            <button type="button" className={styles.button} disabled>
-              ログイン
-            </button>
-          </div>
+          )}
         </div>
       </div>
     </div>

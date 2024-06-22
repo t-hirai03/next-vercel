@@ -1,0 +1,18 @@
+@use "@/app/scss/Global/mixin" as *;
+
+.title {
+  font-size: myClamp(20, 26);
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+
+  .info {
+    .name {
+      font-size: myClamp(16, 20);
+      font-weight: 700;
+    }
+  }
+}
