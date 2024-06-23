@@ -5,9 +5,10 @@ Next.js + TypeScriptの理解を深めるためにこの開発環境を作成。
 
 ## やったこと
 - next-authでログイン機能実装
-  - GitHub、discordのアカウントでログイン
+  - GitHub、Discord、Googleプロパイダーでログイン
 - APIからスプラトゥーン3のスケジュール情報を取得
-- GA分析
+- Google Analytics計測
+- コンポーネントライブラリshadncn/uiを使用
 
 ## デプロイ
 vercelでデプロイする。
