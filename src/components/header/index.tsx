@@ -25,7 +25,7 @@ const Header = () => {
     if (typeof window !== 'undefined' && window.dataLayer && session?.user) {
       // dataLayerにユーザー情報を送信
       window.dataLayer.push({
-        event: 'userInformation',
+        event: 'login',
         user_name: session?.user?.name,
         user_email: session?.user?.email,
         user_image: session?.user?.image,
