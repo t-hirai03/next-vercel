@@ -1,4 +1,8 @@
-import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faDiscord,
+  faGoogle,
+} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { signIn } from 'next-auth/react'
 
@@ -37,6 +41,21 @@ const Login = () => {
                 />
               </button>
               <p className={styles.text}>Discord</p>
+            </li>
+            <li className={styles.item}>
+              {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+              <button
+                type="button"
+                className={styles.button}
+                onClick={() => signIn('google', {}, { prompt: 'login' })}
+              >
+                <FontAwesomeIcon
+                  icon={faGoogle}
+                  className={styles.icon}
+                  style={{ color: '#EA4335' }}
+                />
+              </button>
+              <p className={styles.text}>Google</p>
             </li>
           </ul>
           {process.env.NODE_ENV === 'development' && (
