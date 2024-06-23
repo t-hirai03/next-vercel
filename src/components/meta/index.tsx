@@ -18,6 +18,10 @@ export default function Meta() {
       <title>{currentPage.title}</title>
       <meta name="description" content={currentPage.description} />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta
+        name="google-site-verification"
+        content="dEME8K1CjjTvbtQXCpeRhzrvTBAmXqGTtwIEIf4vP68"
+      />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
