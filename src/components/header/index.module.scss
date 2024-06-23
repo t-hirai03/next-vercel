@@ -2,6 +2,11 @@
 
 .header {
     border-bottom: solid 1px var(--color-border-default);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
 
     .wrapper {
         display: flex;

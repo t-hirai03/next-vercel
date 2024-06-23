@@ -30,6 +30,10 @@ body {
   color: #020817;
 }
 
+body {
+  overflow-y: auto !important;
+}
+
 main {
   overflow-x: hidden;
   flex: 1;
@@ -67,6 +71,9 @@ img {
 
 // shadncnのドロップダウンメニューのスタイル
 [data-radix-popper-content-wrapper] {
+  z-index: 9999;
+  top: 10px !important;
+
   @include MQ(md) {
     width: 100%;
  }
