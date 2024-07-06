@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 import { useEffect } from 'react'
+import { init, send } from '@emailjs/browser'
 
 import {
   DropdownMenu,
@@ -36,6 +37,36 @@ const Header = () => {
     } else {
       // cookieに保存されたユーザー情報を削除
       document.cookie = `user_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC`
+    }
+  }, [session])
+
+  useEffect(() => {
+    console.log('session:', session)
+    if (!session) return
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string
+
+    init(userID)
+
+    if (session?.user) {
+      const params = {
+        name: session?.user?.name,
+        email: session?.user?.email,
+        icon: session?.user?.image,
+      }
+
+      const sendEmail = async () => {
+        try {
+          await send(serviceID, templateID, params)
+        } catch (error) {
+          console.error('メール送信エラー:', error)
+        }
+      }
+
+      sendEmail().catch((error) => {
+        console.error('メール送信エラー:', error)
+      })
     }
   }, [session])
 
