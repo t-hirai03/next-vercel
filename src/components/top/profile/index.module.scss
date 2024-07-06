@@ -4,6 +4,10 @@
 .profile {
   padding: 40px 0;
 
+  @include MQ(sm) {
+    padding: 20px 0;
+  }
+
   .contents {
     margin-top: 20px;
     display: flex;
@@ -54,8 +58,18 @@
         a {
           display: flex;
           align-items: center;
-          height: 50px;
-          width: 50px;
+          height: 40px;
+          width: 40px;
+
+          @include MQ(sm) {
+            height: 30px;
+            width: 30px;
+          }
+
+          .image {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }

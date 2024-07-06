@@ -40,13 +40,13 @@ const Profile = () => {
           </div>
           <div className={styles.icon}>
             <Link href={profile[0].github} passHref target="_blank">
-              <FontAwesomeIcon icon={faGithub} className={styles.icon} />
+              <FontAwesomeIcon icon={faGithub} className={styles.image} />
             </Link>
             <Link href={profile[0].discord} passHref target="_blank">
               <FontAwesomeIcon
                 style={{ color: '#7289DA' }}
                 icon={faDiscord}
-                className={styles.icon}
+                className={styles.image}
               />
             </Link>
           </div>
