@@ -5,7 +5,6 @@ import styles from './index.module.scss'
 
 const MyPage = () => {
   const { data: session } = useSession()
-  console.log(session)
 
   return (
     <div className="l-wrapper">
