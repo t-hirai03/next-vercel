@@ -18,8 +18,8 @@ export default function RootLayout({
     <>
       <Meta />
       <NextAuthProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
           <Header />
           <main>{children}</main>
         </ThemeProvider>

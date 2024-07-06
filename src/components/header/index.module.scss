@@ -1,12 +1,12 @@
 @use "@/app/scss/Global/mixin" as *;
 
 .header {
-    border-bottom: solid 1px var(--color-border-default);
+    border-bottom: solid 1px hsl(var(--card-foreground));
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: #fff;
     z-index: 999;
+    background-color: hsl(var(--card));
 
     .wrapper {
         display: flex;
