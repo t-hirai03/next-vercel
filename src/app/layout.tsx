@@ -3,11 +3,11 @@
 import './scss/globals.scss'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { ThemeProvider } from 'next-themes' // eslint-disable-line import/no-extraneous-dependencies
 
 import Header from '@/components/header'
 import Meta from '@/components/meta'
 import NextAuthProvider from '@/providers/NextAuth'
+import { ThemeProvider } from '@/providers/NextThemes'
 
 config.autoAddCss = false
 
