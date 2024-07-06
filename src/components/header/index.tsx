@@ -40,35 +40,35 @@ const Header = () => {
     }
   }, [session])
 
-  useEffect(() => {
-    console.log('session:', session)
-    if (!session) return
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string
+  // useEffect(() => {
+  //   console.log('session:', session)
+  //   if (!session) return
+  //   const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
+  //   const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string
+  //   const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string
 
-    init(userID)
+  //   init(userID)
 
-    if (session?.user) {
-      const params = {
-        name: session?.user?.name,
-        email: session?.user?.email,
-        icon: session?.user?.image,
-      }
+  //   if (session?.user) {
+  //     const params = {
+  //       name: session?.user?.name,
+  //       email: session?.user?.email,
+  //       icon: session?.user?.image,
+  //     }
 
-      const sendEmail = async () => {
-        try {
-          await send(serviceID, templateID, params)
-        } catch (error) {
-          console.error('メール送信エラー:', error)
-        }
-      }
+  //     const sendEmail = async () => {
+  //       try {
+  //         await send(serviceID, templateID, params)
+  //       } catch (error) {
+  //         console.error('メール送信エラー:', error)
+  //       }
+  //     }
 
-      sendEmail().catch((error) => {
-        console.error('メール送信エラー:', error)
-      })
-    }
-  }, [session])
+  //     sendEmail().catch((error) => {
+  //       console.error('メール送信エラー:', error)
+  //     })
+  //   }
+  // }, [session])
 
   return (
     <header className={styles.header}>
