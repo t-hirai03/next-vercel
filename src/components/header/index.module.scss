@@ -24,7 +24,6 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        border: solid 1px hsl(var(--card-foreground));
         border-radius: 50%;
 
         .link {
@@ -37,7 +36,6 @@
         display: flex;
         align-items: center;
         font-size: 14px;
-        border: solid 1px hsl(var(--card-foreground));
 
         .icon {
             width: 100%;
