@@ -2,6 +2,7 @@ import { format } from 'date-fns'
 import { ja } from 'date-fns/locale'
 import Image from 'next/image'
 
+import Title from '@/components/top/title'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   Card,
@@ -27,7 +28,7 @@ const Splatoon = () => {
 
   return (
     <section className={styles.splatoon}>
-      <h2 className={styles.title}>スプラトゥーン3 サーモンランスケジュール</h2>
+      <Title strTitle="スプラトゥーン3 サーモンランスケジュール" />
       <ul className={styles.list}>
         {salmonRunData &&
           salmonRunData.map((data) => (

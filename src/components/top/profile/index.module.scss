@@ -1,0 +1,63 @@
+@use "@/app/scss/Global/mixin" as *;
+
+
+.profile {
+  padding: 40px 0;
+
+  .contents {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    @include MQ(sm) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .icon {
+      border-radius: 10px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .data {
+        display: flex;
+        gap: 10px;
+
+        .label {
+          font-size: myClamp(16, 18);
+          font-weight: 500;
+        }
+
+        .text {
+          font-size: myClamp(16, 18);
+          font-weight: 400;
+        }
+      }
+
+      .icon {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        a {
+          display: flex;
+          align-items: center;
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@use "@/app/scss/Global/mixin" as *;
+
+.title {
+    font-size: myClamp(16, 24);
+    text-align: center;
+}
