@@ -1,10 +1,9 @@
 @use "@/app/scss/Global/mixin" as *;
 
-.title {
-    font-size: myClamp(16, 24);
-}
+.splatoon {
+  padding: 40px 0;
 
-.list {
+  .list {
     margin-top: 20px;
     display: grid;
     gap: 20px;
@@ -19,7 +18,7 @@
     }
 
     .item {
-        border: solid 1px var(--color-border-default);
+        border: solid 1px hsl(var(--card-foreground));
         border-radius: 4px;
         overflow: hidden;
     }
@@ -57,7 +56,7 @@
 
             .description {
                 font-size: myClamp(16, 18);
-                color: #08131A !important;
+                color: hsl(var(--card-foreground)) !important;
                 font-weight: 500;
                 display: flex;
                 gap: 10px;
@@ -80,4 +79,6 @@
             }
         }
     }
+}
+
 }

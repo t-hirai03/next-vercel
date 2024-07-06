@@ -2,6 +2,9 @@
 
 .title {
   font-size: myClamp(20, 26);
+  @include MQ(sm) {
+    text-align: center;
+  }
 }
 
 .profile {
@@ -9,10 +12,32 @@
   gap: 20px;
   margin-top: 20px;
 
+  @include MQ(sm) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .icon {
+    @include MQ(sm) {
+      margin-inline: auto;
+    }
+  }
+
   .info {
+    .text {
+      @include MQ(sm) {
+        text-align: center;
+      }
+    }
     .name {
       font-size: myClamp(16, 20);
       font-weight: 700;
+    }
+
+    .email {
+      @include MQ(sm) {
+        text-align: center;
+      }
     }
   }
 }
