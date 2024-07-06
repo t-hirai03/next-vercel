@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 import { useEffect } from 'react'
-import { init, send } from '@emailjs/browser'
+// import { init, send } from '@emailjs/browser'
 
 import {
   DropdownMenu,
