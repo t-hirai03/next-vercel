@@ -3,7 +3,7 @@
 import './scss/globals.scss'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { ThemeProvider as NextThemesProvider } from 'next-themes' // eslint-disable-line import/no-extraneous-dependencies
+import { ThemeProvider } from 'next-themes' // eslint-disable-line import/no-extraneous-dependencies
 
 import Header from '@/components/header'
 import Meta from '@/components/meta'
@@ -21,10 +21,10 @@ export default function RootLayout({
       <Meta />
       <NextAuthProvider>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
-        <NextThemesProvider attribute="class" defaultTheme="system">
+        <ThemeProvider attribute="class" defaultTheme="system">
           <Header />
           <main>{children}</main>
-        </NextThemesProvider>
+        </ThemeProvider>
       </NextAuthProvider>
     </>
   )
