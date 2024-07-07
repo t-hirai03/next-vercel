@@ -2,6 +2,7 @@
 
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { Inter } from 'next/font/google'
 
 import pages from './meta'
 
@@ -12,6 +13,8 @@ export default function Meta() {
   if (!currentPage) {
     return null // ページが見つからない場合は何も表示しない
   }
+
+  // const inter = Inter({ subsets: ['latin'] })
 
   return (
     <Head>
@@ -26,7 +29,7 @@ export default function Meta() {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap"
         rel="stylesheet"
       />
     </Head>
