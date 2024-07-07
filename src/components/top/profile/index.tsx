@@ -24,25 +24,25 @@ const Profile = () => {
         <div className={styles.info}>
           <div className={styles.data}>
             <span className={styles.label}>名前：</span>
-            <span className={styles.text}>{profile[0].name}</span>
+            <span className={styles.text}>{profile.name}</span>
           </div>
           <div className={styles.data}>
             <span className={styles.label}>生年月日：</span>
-            <span className={styles.text}>{profile[0].birthday}</span>
+            <span className={styles.text}>{profile.birthday}</span>
           </div>
           <div className={styles.data}>
             <span className={styles.label}>出身地：</span>
-            <span className={styles.text}>{profile[0].birthPlace}</span>
+            <span className={styles.text}>{profile.birthPlace}</span>
           </div>
           <div className={styles.data}>
             <span className={styles.label}>趣味：</span>
-            <span className={styles.text}>{profile[0].hobby}</span>
+            <span className={styles.text}>{profile.hobby}</span>
           </div>
           <div className={styles.icon}>
-            <Link href={profile[0].github} passHref target="_blank">
+            <Link href={profile.github} passHref target="_blank">
               <FontAwesomeIcon icon={faGithub} className={styles.image} />
             </Link>
-            <Link href={profile[0].discord} passHref target="_blank">
+            <Link href={profile.discord} passHref target="_blank">
               <FontAwesomeIcon
                 style={{ color: '#7289DA' }}
                 icon={faDiscord}
