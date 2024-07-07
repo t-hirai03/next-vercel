@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 import { useEffect } from 'react'
-// import { init, send } from '@emailjs/browser'
+import { init, send } from '@emailjs/browser'
 
 import {
   DropdownMenu,
@@ -40,35 +40,43 @@ const Header = () => {
     }
   }, [session])
 
-  // useEffect(() => {
-  //   console.log('session:', session)
-  //   if (!session) return
-  //   const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
-  //   const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string
-  //   const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string
+  useEffect(() => {
+    if (!session) {
+      localStorage.removeItem('hasLoggedInBefore')
+      return
+    }
 
-  //   init(userID)
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string
 
-  //   if (session?.user) {
-  //     const params = {
-  //       name: session?.user?.name,
-  //       email: session?.user?.email,
-  //       icon: session?.user?.image,
-  //     }
+    init(userID)
 
-  //     const sendEmail = async () => {
-  //       try {
-  //         await send(serviceID, templateID, params)
-  //       } catch (error) {
-  //         console.error('メール送信エラー:', error)
-  //       }
-  //     }
+    if (session?.user) {
+      const params = {
+        name: session?.user?.name,
+        email: session?.user?.email,
+        icon: session?.user?.image,
+      }
 
-  //     sendEmail().catch((error) => {
-  //       console.error('メール送信エラー:', error)
-  //     })
-  //   }
-  // }, [session])
+      const sendEmail = async () => {
+        try {
+          await send(serviceID, templateID, params)
+        } catch (error) {
+          console.error('メール送信エラー:', error)
+        }
+      }
+
+      const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore')
+
+      if (!hasLoggedInBefore) {
+        localStorage.setItem('hasLoggedInBefore', 'true')
+        sendEmail().catch((error) => {
+          console.error('メール送信エラー:', error)
+        })
+      }
+    }
+  }, [session])
 
   return (
     <header className={styles.header}>
