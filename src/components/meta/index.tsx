@@ -2,7 +2,6 @@
 
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Inter } from 'next/font/google'
 
 import pages from './meta'
 
@@ -13,8 +12,6 @@ export default function Meta() {
   if (!currentPage) {
     return null // ページが見つからない場合は何も表示しない
   }
-
-  // const inter = Inter({ subsets: ['latin'] })
 
   return (
     <Head>
