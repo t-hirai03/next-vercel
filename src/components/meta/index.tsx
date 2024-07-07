@@ -26,7 +26,7 @@ export default function Meta() {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap"
         rel="stylesheet"
       />
     </Head>

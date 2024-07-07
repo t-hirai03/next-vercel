@@ -1,20 +1,21 @@
-const title = 'ポートフォリオ'
+const title = 'Portfolio'
+const descriptionText = 'Nextjs + TypeScript'
 
 const pages = [
   {
     url: '/',
     title,
-    description: '',
+    description: descriptionText,
   },
   {
     url: '/login',
     title: `ログイン | ${title}`,
-    description: '',
+    description: descriptionText,
   },
   {
     url: '/customers/mypage',
     title: `マイページ | ${title}`,
-    description: '',
+    description: descriptionText,
   },
 ]
 
