@@ -9,6 +9,7 @@ Next.js + TypeScriptの理解を深めるためにこの開発環境を作成。
 - APIからスプラトゥーン3のスケジュール情報を取得
 - Google Analytics計測
 - コンポーネントライブラリshadncn/uiを使用
+- ダークモード対応
 
 ## デプロイ
 vercelでデプロイする。
